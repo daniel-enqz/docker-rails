@@ -11,3 +11,6 @@ tmp/*
 # Editor tmp files
 *.swp
 *.swo
+
+# Node.js
+node_modules

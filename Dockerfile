@@ -1,15 +1,12 @@
 FROM ruby:3.1.3
 
-# Install dependencies
-RUN apt-get update -qq
+RUN apt-get update -yqq
 RUN apt-get install -yqq --no-install-recommends nodejs
 
-# Copy the Gemfile and Gemfile.lock into the image and install gems
-COPY . /usr/src/app
-
-# Set working directory
+COPY Gemfile* /usr/src/app/
 WORKDIR /usr/src/app
 RUN bundle install
 
-# Runnung a command
+COPY . /usr/src/app
+
 CMD ["bin/rails", "s", "-b", "0.0.0.0"]
