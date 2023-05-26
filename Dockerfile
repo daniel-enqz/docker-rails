@@ -1,5 +1,7 @@
 FROM ruby:3.1.3
 
+LABEL maintainer="Daniel Enqz < daniel.enm17@gmail.com"
+
 RUN apt-get update -yqq
 RUN apt-get install -yqq --no-install-recommends nodejs
 
